@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+actor "Ciudadano / Reportante" as C
+actor Voluntario as V
+actor Veterinario as T
+actor Administrador as A
+rectangle "Sistema de rescate y adopción" {
+usecase "Reportar rescate" as U1
+usecase "Categorizar especie" as U2
+usecase "Asignar responsables" as U3
+usecase "Actualizar estado clínico" as U4
+usecase "Gestionar adopción o derivación" as U5
+usecase "Consultar historial" as U6
+}
+C -- U1
+A -- U2
+A -- U3
+T -- U4
+A -- U5
+A -- U6
+V -- U6
+@enduml

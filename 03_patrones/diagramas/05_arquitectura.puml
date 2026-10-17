@@ -1,0 +1,11 @@
+@startuml
+component VistaConsola as V
+component ControladorRescate as C
+component "Modelo y Factory Method" as M
+component "Observer y CorreoAdapter" as O
+component "RepositorioCasos y RepositorioMemoria" as R
+V --> C
+C --> M
+C --> O
+C --> R
+@enduml

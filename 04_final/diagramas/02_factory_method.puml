@@ -1,0 +1,26 @@
+@startuml
+abstract class CreadorExpediente {
++ crear_expediente(nombre, ubicacion): CasoRescate
++ crear_animal(nombre): Animal {abstract}
+}
+class CreadorPerro
+class CreadorGato
+class CreadorSilvestre
+class Animal {
+nombre: str
+especie: str
+}
+class Perro
+class Gato
+class FaunaSilvestre
+CreadorExpediente <|-- CreadorPerro
+CreadorExpediente <|-- CreadorGato
+CreadorExpediente <|-- CreadorSilvestre
+Animal <|-- Perro
+Animal <|-- Gato
+Animal <|-- FaunaSilvestre
+CreadorExpediente ..> Animal : crea
+CreadorPerro ..> Perro : crea
+CreadorGato ..> Gato : crea
+CreadorSilvestre ..> FaunaSilvestre : crea
+@enduml

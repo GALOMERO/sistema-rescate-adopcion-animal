@@ -1,0 +1,50 @@
+@startuml
+class ControladorRescate {
++ registrar(creador, nombre, ubicacion)
++ asignar(id, responsable)
++ cambiar_estado(id, nuevo)
+}
+class CasoRescate {
+animal: Animal
+estado: Estado
+historial: list
++ asignar(responsable)
++ cambiar_estado(nuevo)
+}
+abstract class RepositorioCasos {
++ guardar(caso)
++ obtener(id)
++ listar()
+}
+class RepositorioMemoria
+class PublicadorCasos {
++ suscribir(observador)
++ publicar(evento)
+}
+abstract class Observador {
++ actualizar(evento)
+}
+class CorreoAdapter {
++ actualizar(evento)
+}
+abstract class ServicioCorreo {
++ enviar(destino, asunto, cuerpo)
+}
+class ProveedorCorreoSimulado {
+enviados: list
+}
+class EventoNuevoCaso {
+caso_id: str
+especie: str
+ubicacion: str
+}
+ControladorRescate --> RepositorioCasos : usa
+ControladorRescate --> CasoRescate : gestiona
+ControladorRescate --> PublicadorCasos : publica
+RepositorioCasos <|-- RepositorioMemoria
+PublicadorCasos --> "0..*" Observador : notifica
+Observador <|-- CorreoAdapter
+CorreoAdapter --> ServicioCorreo : adapta
+ServicioCorreo <|-- ProveedorCorreoSimulado
+PublicadorCasos ..> EventoNuevoCaso
+@enduml

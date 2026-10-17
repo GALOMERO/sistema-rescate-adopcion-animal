@@ -1,0 +1,16 @@
+@startuml
+participant Controlador as C
+participant Creador as F
+participant Repositorio as R
+participant Publicador as P
+participant CorreoAdapter as A
+participant ServicioCorreo as S
+C -> F: crear_expediente()
+F -> F: crear_animal() redefinido
+F --> C: CasoRescate
+C -> R: guardar(caso)
+C -> P: publicar(EventoNuevoCaso)
+P -> A: actualizar(evento)
+A -> S: enviar(destino, asunto, cuerpo)
+S --> A: mensaje simulado almacenado
+@enduml
