@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario para reportar animales que necesitan rescate.">
+    <title>Huellas de Esperanza | Reportar un caso</title>
+</head>
+<body>
+    <header>
+        <h1>Huellas de Esperanza</h1>
+        <p>Registro de animales que necesitan rescate</p>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reportar.html" aria-current="page">Reportar un caso</a></li>
+                <li><a href="rescates.html">Consultar rescates</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-formulario">
+            <h2 id="titulo-formulario">Formulario de reporte</h2>
+            <p>
+                Complete los campos obligatorios para registrar la información inicial
+                del caso. El navegador verificará los datos mediante las validaciones
+                propias de HTML5.
+            </p>
+
+            <form action="reportar.html" method="get">
+                <fieldset>
+                    <legend>Datos de la persona que reporta</legend>
+
+                    <p>
+                        <label for="nombre-reportante">Nombre completo:</label>
+                        <input type="text" id="nombre-reportante" name="nombre_reportante"
+                               autocomplete="name" minlength="3" maxlength="80" required>
+                    </p>
+
+                    <p>
+                        <label for="correo">Correo electrónico:</label>
+                        <input type="email" id="correo" name="correo"
+                               autocomplete="email" maxlength="100" required>
+                    </p>
+
+                    <p>
+                        <label for="telefono">Teléfono de contacto:</label>
+                        <input type="tel" id="telefono" name="telefono"
+                               autocomplete="tel" pattern="[0-9+() -]{7,15}"
+                               title="Ingrese entre 7 y 15 caracteres numéricos o signos telefónicos."
+                               required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Información del animal</legend>
+
+                    <p>
+                        <label for="nombre-animal">Nombre del animal, si se conoce:</label>
+                        <input type="text" id="nombre-animal" name="nombre_animal"
+                               maxlength="60">
+                    </p>
+
+                    <p>
+                        <label for="especie">Especie:</label>
+                        <select id="especie" name="especie" required>
+                            <option value="" selected disabled>Seleccione una especie</option>
+                            <option value="perro">Perro</option>
+                            <option value="gato">Gato</option>
+                            <option value="otro">Otra</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="sexo">Sexo:</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="" selected disabled>Seleccione una opción</option>
+                            <option value="macho">Macho</option>
+                            <option value="hembra">Hembra</option>
+                            <option value="desconocido">No se conoce</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="edad">Edad aproximada en años:</label>
+                        <input type="number" id="edad" name="edad" min="0" max="30" step="1">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Ubicación y condición del caso</legend>
+
+                    <p>
+                        <label for="provincia">Provincia:</label>
+                        <select id="provincia" name="provincia" required>
+                            <option value="" selected disabled>Seleccione una provincia</option>
+                            <option value="manabi">Manabí</option>
+                            <option value="guayas">Guayas</option>
+                            <option value="pichincha">Pichincha</option>
+                            <option value="santa-elena">Santa Elena</option>
+                            <option value="otra">Otra</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="canton">Cantón o ciudad:</label>
+                        <input type="text" id="canton" name="canton"
+                               minlength="2" maxlength="60" required>
+                    </p>
+
+                    <p>
+                        <label for="referencia">Dirección o punto de referencia:</label>
+                        <input type="text" id="referencia" name="referencia"
+                               minlength="5" maxlength="150" required>
+                    </p>
+
+                    <p>
+                        <label for="fecha">Fecha en que se observó el caso:</label>
+                        <input type="date" id="fecha" name="fecha" required>
+                    </p>
+
+                    <p>
+                        <label for="urgencia">Nivel de urgencia observado:</label>
+                        <select id="urgencia" name="urgencia" required>
+                            <option value="" selected disabled>Seleccione la urgencia</option>
+                            <option value="alta">Alta: peligro o lesión evidente</option>
+                            <option value="media">Media: necesita atención pronta</option>
+                            <option value="baja">Baja: requiere seguimiento</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="descripcion">Descripción de la situación:</label>
+                        <textarea id="descripcion" name="descripcion" rows="5" cols="45"
+                                  minlength="20" maxlength="500" required></textarea>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <input type="checkbox" id="confirmacion" name="confirmacion"
+                           value="acepto" required>
+                    <label for="confirmacion">
+                        Confirmo que la información ingresada corresponde a lo observado.
+                    </label>
+                </p>
+
+                <p>
+                    <button type="submit">Enviar reporte de prueba</button>
+                    <button type="reset">Limpiar formulario</button>
+                </p>
+            </form>
+        </section>
+
+        <aside aria-labelledby="nota-formulario">
+            <h2 id="nota-formulario">Nota sobre el formulario</h2>
+            <p>
+                La validación se realiza en el navegador mediante atributos HTML5 como
+                required, type, minlength, maxlength, min, max y pattern. Al tratarse
+                de un prototipo estático, el formulario no guarda los reportes en una base
+                de datos ni genera una notificación real.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Proyecto académico de maquetación estructural HTML5.</p>
+        <p><a href="index.html">Volver al inicio</a></p>
+    </footer>
+</body>
+</html>

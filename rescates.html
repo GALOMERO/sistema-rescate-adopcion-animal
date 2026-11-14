@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Listado demostrativo de reportes de rescate animal.">
+    <title>Huellas de Esperanza | Consultar rescates</title>
+</head>
+<body>
+    <header>
+        <h1>Huellas de Esperanza</h1>
+        <p>Consulta de reportes de rescate</p>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reportar.html">Reportar un caso</a></li>
+                <li><a href="rescates.html" aria-current="page">Consultar rescates</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section aria-labelledby="titulo-rescates">
+            <h2 id="titulo-rescates">Listado de casos registrados</h2>
+            <p>
+                La siguiente tabla contiene registros ficticios utilizados únicamente
+                para demostrar la organización semántica de la información.
+            </p>
+
+            <table>
+                <caption>Tabla demostrativa de reportes de rescate</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Código</th>
+                        <th scope="col">Animal</th>
+                        <th scope="col">Especie</th>
+                        <th scope="col">Ubicación</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Urgencia</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RES-001</td>
+                        <td>Luna</td>
+                        <td>Perro</td>
+                        <td>Portoviejo</td>
+                        <td><time datetime="2026-11-12">12/11/2026</time></td>
+                        <td>Alta</td>
+                        <td>Pendiente</td>
+                    </tr>
+                    <tr>
+                        <td>RES-002</td>
+                        <td>Michi</td>
+                        <td>Gato</td>
+                        <td>Manta</td>
+                        <td><time datetime="2026-11-13">13/11/2026</time></td>
+                        <td>Media</td>
+                        <td>En evaluación</td>
+                    </tr>
+                    <tr>
+                        <td>RES-003</td>
+                        <td>Toby</td>
+                        <td>Perro</td>
+                        <td>Jipijapa</td>
+                        <td><time datetime="2026-11-14">14/11/2026</time></td>
+                        <td>Baja</td>
+                        <td>Atendido</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th scope="row" colspan="6">Total de registros demostrativos</th>
+                        <td>3</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section aria-labelledby="estados">
+            <h2 id="estados">Descripción de los estados</h2>
+            <dl>
+                <dt>Pendiente</dt>
+                <dd>El reporte ha sido ingresado y requiere revisión.</dd>
+                <dt>En evaluación</dt>
+                <dd>La información está siendo revisada para determinar la atención necesaria.</dd>
+                <dt>Atendido</dt>
+                <dd>El caso figura como atendido en este ejemplo demostrativo.</dd>
+            </dl>
+        </section>
+
+        <section aria-labelledby="nuevo-reporte">
+            <h2 id="nuevo-reporte">Registrar otro caso</h2>
+            <p><a href="reportar.html">Abrir el formulario de reporte</a></p>
+        </section>
+
+        <aside aria-labelledby="nota-registros">
+            <h2 id="nota-registros">Nota sobre los registros</h2>
+            <p>
+                Los datos de la tabla son ejemplos ficticios. Esta página no consulta
+                reportes reales ni se encuentra conectada a un sistema de almacenamiento.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Proyecto académico de maquetación estructural HTML5.</p>
+        <p><a href="index.html">Volver al inicio</a></p>
+    </footer>
+</body>
+</html>
